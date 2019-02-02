@@ -1,0 +1,368 @@
+.fields {
+  margin: 0;
+  padding: 0;
+  padding-top: 32px;
+  padding-bottom: 18px;
+
+  border: none;
+  border-top: 1px solid #62d1ba;
+}
+
+.fields--color {
+  padding-top: 35px;
+  padding-bottom: 0;
+}
+
+.fields--personal {
+  padding-top: 28px;
+  padding-bottom: 30px;
+}
+
+.fields--contacts {
+  padding: 0;
+  padding-bottom: 32px;
+  border-top: none;
+}
+
+.fields--extra {
+  padding-top: 25px;
+  padding-bottom: 0;
+}
+
+.fields__contact {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.fields__contact:last-of-type {
+  margin-bottom: 0;
+}
+
+.fields__legend {
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #62d1ba;
+}
+
+.fields__legend--line {
+  display: flex;
+  width: 100%;
+  margin-bottom: 7px;
+
+  &::after {
+    content: "";
+    position: relative;
+    top: 9px;
+    left: 2px;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #62d1ba;
+  }
+}
+
+.fields label {
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.fields__value {
+  display: block;
+  position: relative;
+  padding-left: 65px;
+  padding-bottom: 43px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3px;
+
+    box-sizing: border-box;
+    width: 40px;
+    height: 39px;
+    border: 2px solid #444444;
+  }
+
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 11px;
+
+    box-sizing: border-box;
+    width: 23px;
+    height: 10px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(-45deg);
+  }
+}
+
+.fields__value--radio {
+  padding-bottom: 25px;
+
+  &::before {
+    top: -8px;
+    left: 3px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+  }
+
+  &::after {
+    top: 3px;
+    left: 15px;
+
+    width: 15px;
+    height: 15px;
+
+    background-color: #62d1ba;
+    border: none;
+    border-radius: 50%;
+  }
+}
+
+.fields__selection {
+  &:hover + .fields__value {
+    cursor: pointer;
+
+    &::before {
+      border-color: #62d1ba;
+    }
+  }
+
+  &:active + .fields__value {
+    &::before {
+      border-color: rgba(68, 68, 68, 0.3);
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &:checked + .fields__value::after {
+    display: block;
+  }
+
+  &:checked:active + .fields__value::after {
+    display: none;
+  }
+}
+
+.fields__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.fields__text-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+.fields__value-name {
+  display: block;
+  width: 100%;
+}
+
+.fields__text {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px;
+
+  font-size: 19px;
+  line-height: 19px;
+  color: rgb(68, 68, 68);
+
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+
+  &::placeholder {
+    font-size: 17px;
+    line-height: 18px;
+    color: rgba(68, 68, 68, 0.3);
+  }
+
+  &:hover,
+  &:active {
+    background: none;
+    border-color: #62d1ba;
+  }
+}
+
+.fields__text--area {
+  height: 142px;
+  padding-top: 15px;
+  padding-left: 15px;
+
+  border: 2px solid black;
+}
+
+@media (min-width: @tablet-width) {
+  .fields {
+    position: relative;
+    padding-top: 65px;
+    padding-bottom: 15px;
+    padding-left: 6.5%;
+    padding-right: 6.5%;
+
+    border-top: none;
+  }
+
+  .fields--personal,
+  .fields--contacts,
+  .fields--extra {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .fields__contact {
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  .fields__contact:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .fields__legend {
+    position: absolute;
+    top: 65px;
+  }
+
+  .fields__legend--line {
+    top: 15px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .fields__wrapper {
+    padding-left: 167px;
+  }
+
+  .fields__wrapper--color {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .fields--color label {
+    width: 50%;
+  }
+
+  .fields label {
+    font-size: 19px;
+    line-height: 19px;
+  }
+
+  .fields__value {
+    padding-left: 80px;
+    padding-bottom: 55px;
+
+    &::before {
+      top: -15px;
+      left: 0;
+
+      width: 54px;
+      height: 52px;
+    }
+
+    &::after {
+      top: -2px;
+      left: 13px;
+
+      width: 30px;
+      height: 15px;
+    }
+  }
+
+  .fields__value--radio {
+    &::before {
+      width: 51px;
+      height: 51px;
+    }
+
+    &::after {
+      top: 0;
+      left: 16px;
+
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .fields__text-wrapper {
+    flex-direction: row;
+    margin-bottom: 24px;
+  }
+
+  .fields__value-name {
+    width: auto;
+    margin-right: 25px;
+    padding-top: 15px;
+  }
+
+  .fields__text {
+    padding-left: 17px;
+
+    &::placeholder {
+      font-size: 19px;
+      line-height: 18px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .fields {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    padding-right: 100px;
+    width: 1050px;
+  }
+
+  .fields--personal,
+  .fields--contacts,
+  .fields--extra {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 175px;
+  }
+
+  .fields__legend {
+    top: 68px;
+    box-sizing: border-box;
+    width: 175px;
+    text-align: center;
+  }
+
+  .fields__legend--line {
+    display: inline-block;
+    top: 20px;
+  }
+
+  .fields__wrapper {
+    box-sizing: border-box;
+
+    padding-left: 175px;
+  }
+
+  .fields--color label {
+    width: 33%;
+  }
+}

@@ -1,0 +1,22 @@
+.social {
+  .list-style-reset();
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 140px;
+}
+
+.social__link {
+  &:hover {
+    .social__icon {
+      fill: #63d1bb;
+    }
+  }
+
+  &:active {
+    .social__icon {
+      fill: rgba(99, 209, 187, 0.3);
+    }
+  }
+}
