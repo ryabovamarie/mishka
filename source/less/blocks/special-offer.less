@@ -1,0 +1,259 @@
+.special-offer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 27px;
+  padding-left: 9.4%;
+  padding-right: 9.4%;
+  padding-bottom: 40px;
+
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: @grey;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-image: url("../img/bg-zigzag-line.svg");
+    background-size: auto 6px;
+  }
+}
+
+.special-offer__title {
+  .title-font();
+  margin: 0;
+  padding: 0;
+}
+
+.special-offer__special {
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+
+  text-transform: uppercase;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgb(99, 209, 187);
+}
+
+.special-offer__description {
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.special-offer__details {
+  width: 100%;
+  margin-top: 25px;
+
+  line-height: 20px;
+
+  border-collapse: collapse;
+}
+
+.special-offer__details tr {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+
+.special-offer__details td {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.special-offer__key {
+  width: 45%;
+}
+
+.special-offer__image-wrapper {
+  display: block;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.special-offer__image {
+  display: block;
+  margin: 0 auto;
+}
+
+.special-offer__price {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.special-offer__button {
+  display: block;
+  box-sizing: border-box;
+  height: 52px;
+  margin-top: 25px;
+  padding-top: 15px;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (min-width: @tablet-width) {
+  .special-offer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    width: 100%;
+    padding: 65px 6.5%;
+    font-size: 17px;
+    line-height: 30px;
+
+    &::after {
+      height: 15px;
+      background-size: auto 15px;
+    }
+  }
+
+  .special-offer__title {
+    width: 450px;
+
+    font-size: 43px;
+    line-height: 50px;
+    text-align: left;
+  }
+
+  .special-offer__special {
+    display: block;
+    padding-top: 10px;
+    padding-right: 10px;
+    width: 100px;
+
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .special-offer__wrapper {
+    display: flex;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+
+    margin-top: 55px;
+    padding: 0;
+    width: 100%;
+
+    height: 404px;
+  }
+
+  .special-offer__wrapper--flex {
+    margin: 0;
+    width: 44%;
+  }
+
+  .special-offer__details {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .special-offer__price {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .special-offer__image-wrapper {
+    margin: 0;
+    order: 1;
+    outline: 1px solig grey;
+  }
+
+  .special-offer__image {
+    width: auto;
+    height: 404px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .special-offer__wrapper {
+    height: 500px;
+  }
+
+  .special-offer__image {
+    height: 500px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .special-offer {
+    justify-content: flex-start;
+
+    width: @desktop-width;
+    padding-top: 125px;
+    padding-bottom: 95px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0 auto;
+
+    &::after {
+      width: 1050px;
+      left: 100px;
+      height: 23px;
+      background-size: auto 23px;
+    }
+  }
+
+  .special-offer__title {
+    z-index: 1;
+    width: 550px;
+
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .special-offer__special {
+    order: -1;
+
+    box-sizing: border-box;
+    width: 170px;
+    padding-left: 45px;
+    padding-right: 55px;
+  }
+
+  .special-offer__wrapper {
+    position: relative;
+
+    width: 875px;
+    height: 480px;
+    margin-top: 50px;
+    margin-left: 175px;
+  }
+
+  .special-offer__wrapper--flex {
+    width: 295px;
+  }
+
+  .special-offer__image-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .special-offer__image {
+    width: 525px;
+    height: 636px;
+  }
+}
