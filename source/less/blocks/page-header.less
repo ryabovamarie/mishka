@@ -5,16 +5,27 @@
   box-sizing: border-box;
 }
 
-.page-header__logo {
-  box-sizing: border-box;
-  padding: 19px 0;
-  width: 100%;
-  text-align: center;
+.page-header--hide {
+  display: none;
+}
 
-  border-bottom: 1px solid @grey-border;
+.page-header__wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: @mobile-width - 60px;
+  margin: 0 auto;
+}
+
+.page-header__logo {
+  display: block;
+  width: 100%;
+  padding: 19px 0;
+  text-align: center;
 }
 
 .page-header__logo-image {
+  display: inline-block;
+
   width: 86px;
   height: 35px;
 }
@@ -29,8 +40,46 @@
   }
 }
 
+.page-header__toggle {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+
+  display: block;
+  box-sizing: border-box;
+  width: 20px;
+  height: 14px;
+
+  text-indent: -10000px;
+
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/icon-menu-open.svg");
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-header__toggle--close {
+  top: 29px;
+
+  background-image: url("../img/icon-menu-close.svg");
+  width: 21px;
+  height: 21px;
+}
+
 .page-header__site {
   width: 100%;
+
+  border-top: 1px solid @grey-border;
 }
 
 .page-header__user {
@@ -57,15 +106,17 @@
     padding-right: 6.5%;
   }
 
-  .page-header__logo {
+  .page-header__wrapper {
     order: 0;
+    margin: 0;
 
     width: 40%;
+  }
+
+  .page-header__logo {
     padding: 0;
     padding-top: 22px;
     text-align: left;
-
-    border-bottom: 1px solid @grey-border;
   }
 
   .page-header__logo-image {
@@ -73,7 +124,12 @@
     height: 46px;
   }
 
+  .page-header__toggle {
+    display: none;
+  }
+
   .page-header__site {
+    display: flex;
     order: 2;
 
     box-sizing: border-box;
@@ -81,11 +137,10 @@
   }
 
   .page-header__user {
+    display: flex;
     order: 1;
 
     width: 350px;
-
-    border-bottom: 1px solid @grey-border;
   }
 
   .page-header__info {
@@ -112,6 +167,11 @@
     margin: 0 auto;
   }
 
+  .page-header__wrapper {
+    order: 1;
+    width: 250px;
+  }
+
   .page-header__site {
     order: 0;
     flex-grow: 0;
@@ -121,11 +181,8 @@
   }
 
   .page-header__logo {
-    order: 1;
-
     padding: 0;
     padding-top: 10px;
-    width: 250px;
   }
 
   .page-header__logo-image {
