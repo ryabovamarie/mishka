@@ -14,3 +14,18 @@ menuButton.addEventListener('click', function (evt) {
     userMenu.classList.remove("page-header--hide");
   }
 });
+
+var modalOpenButton = document.querySelector(".special-offer__button");
+console.log(modalOpenButton);
+var modal = document.querySelector(".modal");
+var modalButton = document.querySelector(".modal__add");
+
+modalOpenButton.addEventListener('click', function (evt) {
+  document.body.classList.add("body--no-scroll");
+  modal.classList.remove("visually-hidden");
+});
+
+modalButton.addEventListener('click', function (evt) {
+  document.body.classList.remove("body--no-scroll");
+  modal.classList.add("visually-hidden");
+});
