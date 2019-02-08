@@ -6,11 +6,8 @@
 
 Структура файлов:
 
+```bash
+
 css/
-| - style.css
-less/
-| - style.less
-| - [другие *.less файлы]
-sass/
-| - style.scss
-| - [другие *.scss файлы]
+├── style.css           # скомпилированные css файлы
+```
